@@ -8,7 +8,7 @@ var Endpoints = struct {
 	Account,
 	Navigation string
 }{
-	Login:      "https://identitysso.betfair.it/api/login",
+	Login:      "https://identitysso.betfair.it/api/",
 	Identity:   "https://identitysso.betfair.com/api/",
 	Betting:    "https://api.betfair.com/exchange/betting/rest/v1.0/",
 	Account:    "https://api.betfair.com/exchange/account/rest/v1.0/",
