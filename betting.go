@@ -1,5 +1,7 @@
 package gofair
 
+import "time"
+
 // Betting API Operations
 const (
 	listEventTypes          = "listEventTypes/"
@@ -15,6 +17,7 @@ const (
 	placeOrders             = "placeOrders/"
 	cancelOrders            = "cancelOrders/"
 	listCurrentOrders       = "listCurrentOrders/"
+	listRunnerBook          = "listRunnerBook/"
 )
 
 // Betting object
@@ -200,6 +203,59 @@ func (b *Betting) ListMarketBook(marketIDs []string, displayOrders bool) ([]Mark
 	var response []MarketBook
 
 	err := b.bettingRequest(listMarketBook, params, &response)
+
+	return response, err
+}
+
+func (b *Betting) ListRunnerBook(
+	marketId string,
+	selectionId int,
+	handicap float64,
+	priceProjection PriceProjection,
+	orderProjection OrderProjection,
+	matchProjection MatchProjection,
+	includeOverallPosition bool,
+	partitionMatchedByStrategyRef bool,
+	customerStrategyRefs []string,
+	currencyCode string,
+	locale string,
+	matchedSince time.Time,
+	betIds []string,
+) ([]MarketBook, error) {
+
+	params := struct {
+		MarketId                      string          `json:"market_id,omitempty"`
+		SelectionId                   int             `json:"selection_id,omitempty"`
+		Handicap                      float64         `json:"handicap,omitempty"`
+		PriceProjection               PriceProjection `json:"price_projection"`
+		OrderProjection               OrderProjection `json:"order_projection,omitempty"`
+		MatchProjection               MatchProjection `json:"match_projection,omitempty"`
+		IncludeOverallPosition        bool            `json:"include_overall_position,omitempty"`
+		PartitionMatchedByStrategyRef bool            `json:"partition_matched_by_strategy_ref,omitempty"`
+		CustomerStrategyRefs          []string        `json:"customer_strategy_refs,omitempty"`
+		CurrencyCode                  string          `json:"currency_code,omitempty"`
+		Locale                        string          `json:"locale,omitempty"`
+		MatchedSince                  time.Time       `json:"matched_since"`
+		BetIds                        []string        `json:"bet_ids,omitempty"`
+	} {
+		MarketId: marketId,
+		SelectionId: selectionId,
+		Handicap: handicap,
+		PriceProjection: priceProjection,
+		OrderProjection: orderProjection,
+		MatchProjection: matchProjection,
+		IncludeOverallPosition: includeOverallPosition,
+		PartitionMatchedByStrategyRef: partitionMatchedByStrategyRef,
+		CustomerStrategyRefs: customerStrategyRefs,
+		CurrencyCode: currencyCode,
+		Locale: locale,
+		MatchedSince: matchedSince,
+		BetIds: betIds,
+	}
+
+	var response []MarketBook
+
+	err := b.bettingRequest(listRunnerBook, params, &response)
 
 	return response, err
 }
