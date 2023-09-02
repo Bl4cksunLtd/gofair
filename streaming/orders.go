@@ -1,7 +1,7 @@
 package streaming
 
 import (
-	"github.com/belmegatron/gofair/streaming/models"
+	"github.com/cerdrifix/gofair/streaming/models"
 )
 
 type orderHandler struct {

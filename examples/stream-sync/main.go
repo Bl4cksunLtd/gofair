@@ -4,10 +4,10 @@ import (
 	"flag"
 	"log"
 
-	"github.com/belmegatron/gofair"
-	"github.com/belmegatron/gofair/config"
-	"github.com/belmegatron/gofair/streaming"
-	"github.com/belmegatron/gofair/streaming/models"
+	"github.com/cerdrifix/gofair"
+	"github.com/cerdrifix/gofair/config"
+	"github.com/cerdrifix/gofair/streaming"
+	"github.com/cerdrifix/gofair/streaming/models"
 )
 
 func getRandomMarketID(client *gofair.Client) string {
