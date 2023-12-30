@@ -5,8 +5,8 @@ import (
 	"flag"
 	"log"
 
-	"github.com/cerdrifix/gofair"
-	"github.com/cerdrifix/gofair/config"
+	"github.com/Bl4cksunLtd/gofair"
+	"github.com/Bl4cksunLtd/gofair/config"
 )
 
 func prettyPrint(i interface{}) string {

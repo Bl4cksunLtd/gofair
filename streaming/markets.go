@@ -1,7 +1,7 @@
 package streaming
 
 import (
-	"github.com/cerdrifix/gofair/streaming/models"
+	"github.com/Bl4cksunLtd/gofair/streaming/models"
 )
 
 type marketEventHandler struct {

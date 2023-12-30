@@ -5,10 +5,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/cerdrifix/gofair"
-	"github.com/cerdrifix/gofair/config"
-	"github.com/cerdrifix/gofair/streaming"
-	"github.com/cerdrifix/gofair/streaming/models"
+	"github.com/Bl4cksunLtd/gofair"
+	"github.com/Bl4cksunLtd/gofair/config"
+	"github.com/Bl4cksunLtd/gofair/streaming"
+	"github.com/Bl4cksunLtd/gofair/streaming/models"
 )
 
 func getRandomMarketID(client *gofair.Client) string {

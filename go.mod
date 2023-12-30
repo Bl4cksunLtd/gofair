@@ -1,4 +1,4 @@
-module github.com/cerdrifix/gofair
+module github.com/Bl4cksunLtd/gofair
 
 go 1.16
 
